@@ -1,12 +1,14 @@
 import concurrent.futures
 import subprocess
+import os
 
 def run_script(script_path):
     subprocess.run(['python', script_path])
 
 if __name__ == "__main__":
-    script_1 = 'morgana-bot/main.py'
-    script_2 = 'Stickerinator/main.py'
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    script_1 = os.path.join(base_dir, 'morgana-bot', 'main.py')
+    script_2 = os.path.join(base_dir, 'stickerinator', 'main.py')
 
     with concurrent.futures.ProcessPoolExecutor() as executor:
         futures = [executor.submit(run_script, script) for script in [script_1, script_2]]
