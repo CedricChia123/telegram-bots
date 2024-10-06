@@ -1,3 +1,6 @@
 [submodule "morgana-bot"]
 	path = morgana-bot
 	url = https://github.com/CedricChia123/morgana-bot
+[submodule "StickerInator"]
+	path = StickerInator
+	url = https://github.com/fongyj/StickerInator
